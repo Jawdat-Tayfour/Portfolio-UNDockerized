@@ -1,0 +1,122 @@
+:root{
+	font-size: 1em;
+	--bg-color:#EAEAEA;
+	--text-color:#F6F1F1;
+	--main-color:#19A7CE;
+	--header-color:#000000;
+
+    
+}
+
+
+.cards{
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    width: inherit;
+    align-self: center;
+    position: absolute;
+    background-color: #01090b;
+    overflow: hidden;
+
+    z-index: 1000;
+    
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 10px;
+    border-color: var(--main-color);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 1000;
+    background-color: #01090b;
+    padding: 2rem 2rem;
+    color: #F6F1F1;
+
+
+}
+.card:hover{
+    animation: card-animation 2s ease-in-out infinite;   
+}
+@keyframes card-animation {
+    0%{
+        width: auto;
+        height: 100%;
+        filter: blur(0px);
+    }
+    50%{
+        width: auto;
+        height: 97%;
+        filter: blur(4px);
+
+    }
+    100%{
+        width: auto;
+        height: 100%;
+        filter: blur(0px);
+    }
+}
+
+.container{
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+    align-self: center;
+    overflow: hidden;
+ 
+}
+.details{
+    align-items: center;
+    width: auto;
+    height: 20vh;
+   
+}
+.details h3{
+    font-family: monospace;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-style: solid;
+    border-width: 0.5px;
+    border-right: 0;
+    border-left: 0;
+    padding: 1rem 1rem;
+    margin: 0 0 0 0;
+    border-radius: 5px;
+    border-color: cornsilk;    
+    color:var(--main-color);
+}
+.details p{
+    font-weight: 300;
+    padding: 0.5rem 1rem;
+    margin: 1rem 1rem;
+    border-radius: 5px;
+    opacity: 70%;    
+    word-wrap: break-word;
+    overflow: hidden;
+}
+.project-type {
+    border-style: solid;
+    border-color: var(--main-color);
+    border-width: 1px;
+    overflow: hidden;
+    text-transform: uppercase;
+    color: #EAEAEA;
+    text-decoration: none;
+
+}
+
+.cards a{
+    text-decoration: none;
+}
+.cards a:visited{
+    color: #F6F1F1;
+
+}

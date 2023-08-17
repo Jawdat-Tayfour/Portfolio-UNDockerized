@@ -1,0 +1,145 @@
+:root{
+	font-size: 1em;
+	--bg-color:#EAEAEA;
+	--text-color:#F6F1F1;
+	--main-color:#19A7CE;
+	--header-color:#000000;   
+
+}
+
+.section1{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 100%;
+    margin-top: 10vh;
+    justify-items: flex-end;
+    justify-content: space-between;
+    z-index: 10005;
+
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.pic{
+    clip-path: ellipse(50% 50% at 50% 50%);
+}
+.scrollable{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    position: fixed;
+    width: inherit;
+    height:100vh;
+    z-index: 10008;
+    overflow-y: scroll;
+    margin-bottom: 30vh;
+}
+.headers{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 100%;
+    top: 40vh;
+    justify-items:flex-start;
+    justify-content: space-evenly;
+    z-index: 10005; 
+    align-self: center;
+    overflow: hidden;
+    flex-wrap:wrap-reverse;
+}
+.name{
+    
+    flex:0.5;
+    position:static;
+    text-align: center;
+    border-style: dashed;
+    border-color: #19A7CE;
+    border-right: 0;
+    border-left: 0;
+}
+.name h3{
+    margin: 2rem 2rem;
+    align-self: center;
+    font-family: monospace;
+    text-transform: uppercase;
+
+}
+.birthdate{
+    
+    flex: 1;
+    position:static;
+    text-align: center;
+    border-style: solid;
+    border-color: #19A7CE;
+}
+.birthdate h3{
+    margin: 2rem 2rem;
+    font-family: monospace;
+    text-transform: uppercase;
+    align-self: center;
+}
+.nationality{
+    
+    flex: 1;
+    position:static;
+    text-align: center;
+    border-style: solid;
+    border-color: #19A7CE;
+}
+.nationality h3{
+    margin: 2rem 2rem;
+    font-family: monospace;
+    text-transform: uppercase;
+    align-self: center;
+}
+
+.body{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 100%;
+    height: fit-content;
+    top: 65vh;
+    justify-items:flex-start;
+    justify-content: space-evenly;
+    z-index: 10008; 
+    align-self: center;
+    overflow: hidden;
+    border-style: solid;
+    border-color: #19A7CE;
+    transition: all 0.5s ease-in-out;
+    margin-bottom: 20vh;
+}
+.about{
+    position: static;
+    margin: 2rem 2rem;
+    word-wrap: break-word;
+    margin-bottom: 15vh;
+    background-color: #01090b;
+    opacity: 95%;
+}
+
+.about strong{
+    font-family: monospace;
+    text-transform: uppercase;
+    color: #19A7CE;
+}
+@media (max-height:800px) {
+    .body{
+        top: 75vh;
+    }
+    .headers{
+        margin-top: 2rem;
+        font-size: 0.8rem;
+        background-color: #01090b;
+        align-self: center;
+        justify-content: space-between;
+    }
+}
+@media (min-height:minmax(900px,1024px)) {
+    .body{
+        top: 60vh;
+    }
+}
