@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>{{project.title|safe}}</title>
+<link href="{% static 'css/project_detail.css' %}" rel="stylesheet" type="text/css" />
+
+{% endblock title %}
+{% block content %}
+<div class="elements">
+    <div class="cards">
+        {% for img in project.images.all %}
+            <div class="card">
+            <img src="{{img.image.url}}">
+        </div>
+        {% endfor %}
+    </div>
+    <div class="details">
+        
+        <div class="project-title">
+            <bold><h1>{{project.title|safe}}</h1></bold>
+        </div>
+        
+        
+            <p class="project-type">{{project.project_type|safe}}</p>
+        
+
+        <div class="project-body">
+            <p> {{project.body|safe}} </p>
+        </div>
+        
+    </div>
+</div>
+{% endblock content %}
+

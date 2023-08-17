@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>| Projects |</title>
+<link href="{% static 'css/project_list.css' %}" rel="stylesheet" type="text/css" />
+{% endblock title %}
+{% block content %}
+<div class="cards">
+    {% for project in projects %}
+        
+            <div class="card">
+                <a href="{{project.get_absolute_url  }}">
+            <div class="container">
+                
+                <img class="cover" src="/media/{{project.cover}}" alt='project cover'>
+                
+            </div>
+            <div class="details">
+                <h3>{{project.title|safe}}</h3>
+                <bold><div ="project-type">{{project.project_type|safe}}</div></bold>
+                <p>{{project.body|safe}}</p>
+            </div>
+        </div></a>
+    {% endfor %}
+</div>
+{% endblock content %}

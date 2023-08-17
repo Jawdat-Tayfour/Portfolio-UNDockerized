@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% block title %}<title></title>{% endblock title %}
+	<link href="{% static 'css/base.css' %}" rel="stylesheet" type="text/css" />
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+	<link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+
+</head>
+<body>
+	<header>
+		<a href="{% url 'about' %}" class="logo"><img src="{% static 'images/Neon.png' %}"><span>Jawdat Tayfour</span></a>
+
+		<ul class="navbar">
+			<li class="Game-Dev"><a href="{% url 'game_dev_project_list' %}">Game-Dev</a></li>
+			<li class="Web-Dev"><a href="{% url 'web_dev_project_list' %}">Web-Dev</a></li>
+		</ul>
+
+		<div class="main">
+			<div class="bx bx-menu" id="menu-icon"></div><box-icon name='list-ul'></box-icon>
+		</div>
+
+	</header>
+
+	<footer >
+		
+
+		<ul  class="bottom-bar" >
+			<li><a href="#"><p>© 2023 Jawdat Tayfour. All rights reserved.</p></a></li>
+			<li><a href="#"><i class="bx bxl-facebook-square"></i></a></li>
+			<li><a href="#"><i class='bx bxl-instagram' ></i></a></li>
+			<li><a href="#"><i class='bx bxl-linkedin-square' ></i></a></li>
+			<li><a href="#"><i class='bx bxs-game'></i></a></li>
+			<li><a href="#"><i class='bx bxl-dev-to' ></i></a></li>
+
+		</ul>
+	</footer>
+	<div class="content-container">
+		<div class="inv-card"></div>
+		<div class="inv-card"></div>
+		<div class="inv-card"></div>
+		<div class="inv-card"></div>
+		<div class="inv-card"></div>
+		<div class="inv-card"></div>
+		<div class="inv-card"></div>
+		<div class="inv-card"></div>
+		<div class="inv-card"></div>
+		<div class="inv-card"></div>
+		<div class="inv-card"></div>
+		<div class="inv-card"></div>
+
+	{% block content %}
+	{% endblock content %}
+
+	</div>
+<script type="text/javascript" src="{% static 'js/base.js' %}"></script>
+</body>
+</html>

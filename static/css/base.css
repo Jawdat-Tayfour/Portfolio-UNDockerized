@@ -1,0 +1,270 @@
+*{
+	padding: 0;
+	margin:0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+}
+:root{
+
+	font-size: 1em;
+	--bg-color:#EAEAEA;
+	--text-color:#F6F1F1;
+	--main-color:#19A7CE;
+	--header-color:#000000;
+	overflow: auto;
+	
+}
+body{
+	
+	min-height: 100vh;
+	display: flex;
+	background: #020c0f;
+	color:var(--text-color);
+	flex-direction: column;
+	overflow: auto;
+}
+
+header{
+	position: fixed;
+	width: 100%;
+	height: 7vh;
+	top:0px;
+	right:0;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: rgb();
+	background-color:var(--header-color);
+	padding: 1rem 1.4rem;
+	transition: all .50s ease;
+	border: 2px;
+	border-width: 0 0 3px 0 ;
+	border-style: solid;
+	border-color: #19A7CE;
+	z-index: 100000;
+
+}
+
+.logo{
+	display: flex;
+	align-items: center;
+}
+.logo img{
+	width: 1.8rem;
+	margin-left: 0;
+}
+.logo span{
+	color: var(--text-color);
+	font-size: 1.5rem;
+	font-weight: 600;
+	padding-left: 1rem;
+}
+
+.navbar{
+	display: flex;
+}
+.navbar a{
+	color: var(--text-color);
+	font-size: 1.1rem;
+	font-weight: 500;
+	padding: 1rem 0;
+	margin: 0px 5rem;
+	transition: all .50s ease;
+}
+.navbar a:hover{
+	color: var(--main-color);
+}
+.main{
+	display: flex;
+	align-items: center;
+}
+#menu-icon{
+	font-size: 35px;
+	color: var(--text-color);
+	cursor:pointer;
+	position: relative;
+	z-index: 10025;
+	display: none;
+}
+
+footer{
+	position: fixed;
+	width: 100%;
+	height: 7vh;
+	bottom: 0px;
+	right:0;
+	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: rgb();
+	background-color:#EAEAEA;
+	padding: 1px 1.4rem;
+	transition: all .50s ease;
+	z-index: 10000;
+	overflow: hidden;
+
+
+
+}
+
+.bottom-bar{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    flex-direction: row;
+    text-align: center;
+}
+.bottom-bar p{
+	font-size:0.8rem;
+	color: #3C4048;
+}
+
+.bottom-bar a{
+		font-size: 1.1rem;
+		color: #3C4048;
+		padding: 1rem 0;
+		margin: 0px 0.8rem;
+		float: left;
+		opacity: 75%;
+}
+.bottom-bar a:visited{
+  color: #3C4048;
+}
+.bottom-bar a:hover{
+  color: var(--main-color);
+  transform: all .50s ease;
+}
+
+.content-container{
+	display:grid ;
+	grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+	gap: 6rem;
+	width: 90vw;
+	height: 110vh;
+	padding-top: 7vh ;
+	background-color: #01090b;
+	align-self: center;
+	overflow: hidden;
+	position: absolute;
+	z-index: 10;
+}
+
+
+.inv-card{
+ 	position: sticky;
+	display: flex;
+    background: hsla(0, 0%, 0%, 0.5);
+    overflow: hidden;
+    border-radius: 1px;
+	opacity: 60%	;
+	z-index: 100;
+	flex-direction: column;
+
+}
+.inv-card::before{
+    content:'';
+	position: absolute;
+	align-self: center;
+    width: 150%;
+    height: 100%;
+    background: linear-gradient(var(--main-color),#01090b,var(--main-color));
+    animation:animate 100s ease-in-out infinite ;
+
+}
+.inv-card::after{
+    content:'';
+    position: absolute;
+    inset: 1px;
+    background: #01090b;
+
+
+}
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+	25%{
+        transform: rotate(90deg);
+    }
+	50%{
+        transform: rotate(180deg);
+    }
+	75%{
+        transform: rotate(270deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+@media (max-width: 1280px){
+	header{
+		padding: 14px 2%;
+		transition: .2s;
+	}
+	.navbar a{
+		padding: 1rem 0;
+		margin: 0px 5rem; 
+
+	}
+
+}
+@media (max-width: 1090px){
+	#menu-icon{
+	display:block;
+	}
+	.navbar{
+		position: absolute;
+		top: 100%;
+		right: -100%;
+		width: 270px;
+		height: 29vh;
+		background: var(--main-color);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		border-radius: 10px;
+		transition: all .50s ease;
+	}
+	.navbar a{
+		display: block;
+		margin:12px 0;
+		padding: 0px 25px;
+		transition: all .50s ease;
+		
+	}
+	.navbar a:hover{
+		color:var(--text-color);
+		transform: translateY(5px);
+
+	}
+	.navbar.open{
+		height: fit-content;
+		right: 2%;
+
+	}
+	.bottom-bar p{
+	font-size:0.7rem;
+}
+.logo img{
+	width: 1.8rem;
+	margin-left: 0;
+}
+footer{
+	bottom: -10px;
+}
+header{
+	top:0;
+}
+.content-container{
+	height: calc(100vh + 100%);
+
+}
+}
+
