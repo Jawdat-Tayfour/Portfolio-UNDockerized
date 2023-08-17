@@ -9,7 +9,7 @@ class Project(models.Model):
     title = models.TextField(max_length=80)
     body = RichTextField(max_length=10000)
     project_type = models.TextField(max_length=50,null=True)
-    cover = models.ImageField(upload_to="media",blank=True)
+    cover = models.URLField(blank=True)
     def __str__(self):
         return self.title
     def get_absolute_url(self):
