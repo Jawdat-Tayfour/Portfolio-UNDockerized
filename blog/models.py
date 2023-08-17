@@ -20,4 +20,4 @@ class Link(models.Model):
 
 class Image(models.Model):
     project = models.ForeignKey(Project,on_delete=models.CASCADE,related_name="images")
-    image = models.FileField(upload_to="media",blank=True)
+    image = models.URLField(blank=True)
