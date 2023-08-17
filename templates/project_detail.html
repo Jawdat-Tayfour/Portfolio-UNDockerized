@@ -10,7 +10,7 @@
     <div class="cards">
         {% for img in project.images.all %}
             <div class="card">
-            <iframe src="{{img.image}}" width="320" height="320" frameBorder="0"></iframe>
+            <img src="{{img.image}}">
         </div>
         {% endfor %}
     </div>
