@@ -12,12 +12,12 @@
                 <a href="{{project.get_absolute_url  }}">
             <div class="container">
                 
-                <img class="cover" src="/media/{{project.cover}}" alt='project cover'>
+                <img class="cover" src="{{project.cover}}" alt='project cover'>
                 
             </div>
             <div class="details">
                 <h3>{{project.title|safe}}</h3>
-                <bold>{{project.project_type|safe}}</bold>
+                <bold ><p class="project-type">{{project.project_type|safe}}</p></bold>
                 <p>{{project.body|safe}}</p>
             </div>
         </div></a>
