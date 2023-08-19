@@ -102,7 +102,7 @@ DATABASES = {
     }
 }
 db = env("DJANGO_DATABASE")
-DATABASES["default"]=db
+DATABASES["default"]=dj_database_url.parse(db) 
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
